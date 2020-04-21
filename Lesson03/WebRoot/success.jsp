@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="ISO-8859-1"%>
+<%@page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -23,6 +23,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    Success<br>
+    Success
+    <% String user = (String)request.getAttribute("username");%>
+	${username }
+	${stu.name }
+	${stu['major'] }
+    <br>
+    ${field }
+    ${stu[field] }
+    <br>
+    ${3+2 }
+    ${3 eq 2 }
+    ${3 == 2 }
+    ${empty user }
+    ${3 == 2 ? "3===2" : "3!=2 "}
+    <br>
+    ${sessionScope.stu.name }
   </body>
 </html>
